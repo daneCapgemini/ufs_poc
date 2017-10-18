@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Styled from "styled-components";
-import "./App.css";
+import React, { Component } from 'react';
+import Styled from 'styled-components';
+import './App.css';
 
 const Map = Styled.div`
   width: 100%;
@@ -9,24 +9,23 @@ const Map = Styled.div`
 
 class App extends Component {
   componentDidMount() {
-    let options = {
-      center: [40.4, -3.6833], // Madrid\
+    const options = {
+      // center: [40.4, -3.6833], // Madrid\
       zoom: 7,
-      //title: true,
-      layer_selector: true,
-      force_mobile: true
-      //scrollwheel: true
+      // title: true,
+      layer_selector: true
+      // force_mobile: true
+      // scrollwheel: true
     };
 
     window.cartodb.createVis(
-      "map",
-      "http://documentation.carto.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json",
+      'map',
+      'https://capgemini-uk.carto.com/u/simonconway1979/api/v2/viz/4da691fa-8fbb-4e84-8dc3-dc10826476c7/viz.json',
       options
     );
 
-    debugger;
-    //const vis = window.cartodb.Vis();
-    //vis.addOverlay(options);
+    // const vis = window.cartodb.Vis();
+    // vis.addOverlay(options);
   }
 
   render() {
