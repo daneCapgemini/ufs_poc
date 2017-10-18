@@ -1,24 +1,38 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import Styled from "styled-components";
 import "./App.css";
-//import { cartodb } from "./modules/carto";
+
+const Map = Styled.div`
+  width: 100%;
+  height: 100vh;
+`;
 
 class App extends Component {
   componentDidMount() {
+    let options = {
+      center: [40.4, -3.6833], // Madrid\
+      zoom: 7,
+      //title: true,
+      layer_selector: true,
+      force_mobile: true
+      //scrollwheel: true
+    };
+
     window.cartodb.createVis(
       "map",
-      "http://documentation.carto.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json"
+      "http://documentation.carto.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json",
+      options
     );
+
+    debugger;
+    //const vis = window.cartodb.Vis();
+    //vis.addOverlay(options);
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} id="myImage" className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="Map-container" id="map" />
+        <Map id="map" />
       </div>
     );
   }
