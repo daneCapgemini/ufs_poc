@@ -19,10 +19,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "precommit": "--no-verify"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": ["git add"]
   },
   "devDependencies": {
     "eslint": "^4.9.0",
